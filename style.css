@@ -133,7 +133,7 @@ nav ul li a:hover {
     display: block;
     font-size: 18px;
     font-weight: 600;
-    color: #d35400;
+    color: #ff8c00; /* High contrast orange for dark background */
     margin-bottom: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -156,7 +156,7 @@ nav ul li a:hover {
 }
 
 .hero-text .orange-text {
-    color: #d35400;
+    color: #ff8c00; /* High contrast orange */
 }
 
 .hero-text .description {
@@ -212,7 +212,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     gap: 15px;
-    color: #aaa;
+    color: #ff8c00; /* High contrast orange */
     font-size: 14px;
     font-style: italic;
 }
@@ -589,12 +589,12 @@ nav ul li a:hover {
 
 .menu-item .price {
     font-weight: bold;
-    color: #d35400 !important;
+    color: #2c3e50 !important; /* Dark color for better contrast */
     font-size: 20px;
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(211, 84, 0, 0.1);
+    background: rgba(44, 62, 80, 0.1);
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: 700;
