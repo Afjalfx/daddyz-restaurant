@@ -96,68 +96,57 @@
 
         <section id="menu" class="menu-section">
             <div class="container">
-                <h2>Our Menu</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="menu images/dish1.jpg" alt="Mithila Special Thali" width="350" height="220">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Mithila Special Thali</h3>
-                            <p>Our signature dish featuring a variety of traditional Mithila cuisine including dal, rice, roti, and a selection of vegetarian curries</p>
-                            <p class="price">₹250</p>
-                        </div>
+                <div class="menu-header">
+                    <div class="menu-title-area">
+                        <h2>Our Menu</h2>
+                        <p class="menu-subtitle">Explore our diverse range of delicious dishes, from traditional favorites to modern delights. Prepared with love and the freshest ingredients.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="menu images/dish2.jpg" alt="Litti Chokha" width="350" height="220">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Litti Chokha</h3>
-                            <p>Deep-fried ball-shaped dumplings stuffed with a spiced mixture of grated coconut and moong dal, served with a tangy tamarind chutney</p>
-                            <p class="price">₹220</p>
-                        </div>
+                    <div class="menu-decorations">
+                        <!-- Decorative food illustrations (SVGs) will be handled via CSS or added here -->
+                        <svg class="decor-svg decor-chilli" width="60" height="60" viewBox="0 0 100 100">
+                            <path d="M70,20 C60,10 40,10 30,20 C20,30 20,50 30,70 C40,90 60,90 70,70 C80,50 80,30 70,20 Z" fill="none" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                        </svg>
+                        <svg class="decor-svg decor-eggplant" width="60" height="60" viewBox="0 0 100 100">
+                            <path d="M50,10 C30,10 10,30 10,60 C10,80 30,90 50,90 C70,90 90,80 90,60 C90,30 70,10 50,10 Z" fill="none" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                        </svg>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="menu images/dish3.jpg" alt="Chicken Biryani" width="350" height="220">
+                </div>
+
+                <div class="menu-controls">
+                    <div class="category-nav-container">
+                        <button class="scroll-btn left-btn" id="scroll-left" aria-label="Scroll Left">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="category-filters-wrapper" id="category-wrapper">
+                            <div class="category-filters">
+                                <button class="filter-btn active" data-category="all">All Menu</button>
+                                <button class="filter-btn" data-category="main-course">Main Course</button>
+                                <button class="filter-btn" data-category="starters">Starters</button>
+                                <button class="filter-btn" data-category="chinese">Chinese</button>
+                                <button class="filter-btn" data-category="rice-biryani">Rice & Biryani</button>
+                                <button class="filter-btn" data-category="indian-breads">Indian Breads</button>
+                                <button class="filter-btn" data-category="salad-sides">Salad & Sides</button>
+                                <button class="filter-btn" data-category="desserts">Desserts</button>
+                                <button class="filter-btn" data-category="beverages">Beverages</button>
+                            </div>
                         </div>
-                        <div class="menu-info">
-                            <h3>Chicken Biryani</h3>
-                            <p>Fragrant basmati rice cooked with tender chicken pieces, saffron, and a blend of spices, served with raita</p>
-                            <p class="price">₹300</p>
-                        </div>
+                        <button class="scroll-btn right-btn" id="scroll-right" aria-label="Scroll Right">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="menu images/dish4.jpg" alt="Dal Baati Churma" width="350" height="220">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Dal Baati Churma</h3>
-                            <p>Whole wheat balls cooked in ghee, served with creamy dal and a sweet churma made from leftover wheat flour</p>
-                            <p class="price">₹280</p>
-                        </div>
+                    <div class="sort-control">
+                        <label for="menu-sort">Sort by:</label>
+                        <select id="menu-sort" class="sort-select">
+                            <option value="popular">Popular</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                        </select>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="menu images/dish5.jpg" alt="Momos" width="350" height="220">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Momos</h3>
-                            <p>Steamed dumplings filled with either minced meat or vegetables, served with a spicy red chutney</p>
-                            <p class="price">₹180</p>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="menu images/dish6.jpg" alt="Rajma Chawal" width="350" height="220">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Rajma Chawal</h3>
-                            <p>Kidney bean curry cooked with tomatoes, onions, and spices, served with steamed basmati rice</p>
-                            <p class="price">₹240</p>
-                        </div>
-                    </div>
+                </div>
+
+                <div id="menu-grid" class="menu-grid">
+                    <!-- Menu items will be dynamically injected here -->
                 </div>
             </div>
         </section>
