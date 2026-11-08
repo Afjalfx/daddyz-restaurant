@@ -299,20 +299,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // 3. Render
         menuGrid.innerHTML = '';
 
+        // Ensure visibleItems matches current screen size
+        updateVisibleItems();
+
         // Determine how many items to show
         let itemsToShow;
         if (currentCategory === 'all') {
             // For "All Menu", use pagination
             itemsToShow = allItems.slice(0, visibleItems);
-
         } else {
             // For individual categories, show all items
             itemsToShow = allItems;
             viewMoreBtn.style.display = 'none';
         }
-
-        // Ensure visibleItems matches current screen size
-        updateVisibleItems();
         // Update view more button based on current state
         if (currentCategory === 'all') {
             if (allItems.length > visibleItems) {

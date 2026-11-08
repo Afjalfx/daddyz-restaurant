@@ -740,16 +740,11 @@ nav ul li a:hover {
     color: #f44336;
 }
 
-/* Hover reveal area */
 .card-actions {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: auto;
-}
-
-.menu-card:hover .card-actions {
-    display: flex;
 }
 
 .quantity-control {
@@ -811,8 +806,13 @@ nav ul li a:hover {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 0 12px;
+    }
+
     .menu-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
     .menu-title-area h2 {
         font-size: 36px;
@@ -835,7 +835,7 @@ nav ul li a:hover {
     }
 
     .menu-card {
-        padding: 15px;
+        padding: 12px;
     }
 
     .card-image-placeholder {
@@ -843,11 +843,37 @@ nav ul li a:hover {
     }
 
     .card-header h3 {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .card-price {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .card-description {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .card-badges {
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .badge {
+        padding: 2px 6px;
+        font-size: 9px;
+    }
+
+    .add-to-cart-btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .qty-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
     }
 }
 
@@ -1465,71 +1491,6 @@ footer {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-    }
-
-    /* Menu section mobile - match desktop styling */
-    .menu-section {
-        padding: 80px 20px;
-    }
-
-    .menu-section h2 {
-        font-size: 32px;
-        margin-bottom: 40px;
-    }
-
-    .menu-section h2::after {
-        bottom: -15px;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .menu-item {
-        border: none;
-        background: #fff;
-        border-radius: 15px;
-        transition: all 0.3s;
-        margin-bottom: 0;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    }
-
-    .menu-image {
-        height: 180px;
-    }
-
-    .menu-image img {
-        height: 100%;
-    }
-
-    .menu-info {
-        padding: 25px;
-    }
-
-    .menu-info h3 {
-        font-size: 22px;
-        margin-bottom: 12px;
-        color: #2c3e50;
-    }
-
-    .menu-info p {
-        font-size: 16px;
-        margin-bottom: 15px;
-        color: #666;
-    }
-
-    .price {
-        font-size: 18px;
-        font-weight: bold;
-        display: block;
-        margin-top: 10px;
-        color: #d35400;
     }
 
     /* About section mobile - match desktop styling */
