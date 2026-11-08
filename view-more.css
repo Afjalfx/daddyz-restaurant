@@ -2,20 +2,33 @@
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    grid-column: 1/-1;
 }
 
 .view-more-btn {
-    padding: 12px 30px;
+    padding: 12px 40px;
     background-color: var(--forest-green);
     color: white;
     border: none;
     border-radius: 25px;
     font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 66, 54, 0.3);
 }
 
 .view-more-btn:hover {
     background-color: #005645;
+}
+
+@media (max-width: 600px) {
+    .view-more-container {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .view-more-btn {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
 }

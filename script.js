@@ -207,7 +207,13 @@ document.addEventListener('DOMContentLoaded', function() {
     viewMoreContainer.className = 'view-more-container';
     viewMoreContainer.innerHTML = '<button class="view-more-btn" id="view-more-btn">View More</button>';
     const menuSection = document.getElementById('menu');
-    menuSection.appendChild(viewMoreContainer);
+    // Insert after .menu-grid so it sits outside the grid but still inside #menu
+    const menuGridEl = document.getElementById('menu-grid');
+    if (menuGridEl && menuGridEl.nextSibling) {
+        menuGridEl.parentNode.insertBefore(viewMoreContainer, menuGridEl.nextSibling);
+    } else {
+        menuSection.appendChild(viewMoreContainer);
+    }
     const viewMoreBtn = document.getElementById('view-more-btn');
 
     // Category navigation scroll logic
@@ -264,12 +270,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateVisibleItems() {
         visibleItems = detectScreenSize();
     }
-
-    // Adjust visible items on resize
-    window.addEventListener('resize', () => {
-        updateVisibleItems();
-        renderMenu();
-    });
     function renderMenu() {
         if (!menuGrid) return;
 
@@ -298,9 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 3. Render
         menuGrid.innerHTML = '';
-
-        // Ensure visibleItems matches current screen size
-        updateVisibleItems();
 
         // Determine how many items to show
         let itemsToShow;
@@ -404,21 +401,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listener for view more button
-    viewMoreBtn.addEventListener('click', () => {
-        if (currentCategory === 'all') {
-            // For "All Menu", implement pagination
-            if (visibleItems < allItems.length) {
-                // Show more items
-                visibleItems += detectScreenSize();
-                renderMenu();
-            } else {
-                // Show less items (reset to initial)
-                visibleItems = detectScreenSize();
-                viewMoreBtn.textContent = 'View More';
-                renderMenu();
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', () => {
+            if (currentCategory === 'all') {
+                // For "All Menu", implement pagination
+                if (visibleItems < allItems.length) {
+                    // Show more items (+8 desktop, +4 mobile)
+                    visibleItems += detectScreenSize();
+                    renderMenu();
+                } else {
+                    // Show less items (reset to initial: 8 desktop, 4 mobile)
+                    visibleItems = detectScreenSize();
+                    renderMenu();
+                }
             }
-        }
-    });
+        });
+    }
 
     // Filter event listeners
     filterButtons.forEach(btn => {
