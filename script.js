@@ -202,6 +202,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const sortSelect = document.getElementById('menu-sort');
 
+    // Create view more button
+    const viewMoreContainer = document.createElement('div');
+    viewMoreContainer.className = 'view-more-container';
+    viewMoreContainer.innerHTML = '<button class="view-more-btn" id="view-more-btn">View More</button>';
+    const menuSection = document.getElementById('menu');
+    menuSection.appendChild(viewMoreContainer);
+    const viewMoreBtn = document.getElementById('view-more-btn');
+
     // Category navigation scroll logic
     const categoryWrapper = document.getElementById('category-wrapper');
     const scrollLeftBtn = document.getElementById('scroll-left');
@@ -246,18 +254,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentCategory = 'all';
     let currentSort = 'popular';
+    let visibleItems = 8; // Default for desktop
+    let allItems = []; // Store all filtered items
 
+    function detectScreenSize() {
+        return window.innerWidth <= 768 ? 4 : 8;
+    }
+
+    function updateVisibleItems() {
+        visibleItems = detectScreenSize();
+    }
+
+    // Adjust visible items on resize
+    window.addEventListener('resize', () => {
+        updateVisibleItems();
+        renderMenu();
+    });
     function renderMenu() {
         if (!menuGrid) return;
 
         // 1. Filter
-        let filteredItems = menuData.filter(item => {
+        allItems = menuData.filter(item => {
             if (currentCategory === 'all') return true;
             return item.category === currentCategory;
         });
 
         // 2. Sort
-        filteredItems.sort((a, b) => {
+        allItems.sort((a, b) => {
             if (currentSort === 'price-low') {
                 let pA = typeof a.price === 'number' ? a.price : parseInt(a.price) || 0;
                 let pB = typeof b.price === 'number' ? b.price : parseInt(b.price) || 0;
@@ -276,12 +299,41 @@ document.addEventListener('DOMContentLoaded', function() {
         // 3. Render
         menuGrid.innerHTML = '';
 
-        if (filteredItems.length === 0) {
+        // Determine how many items to show
+        let itemsToShow;
+        if (currentCategory === 'all') {
+            // For "All Menu", use pagination
+            itemsToShow = allItems.slice(0, visibleItems);
+
+        } else {
+            // For individual categories, show all items
+            itemsToShow = allItems;
+            viewMoreBtn.style.display = 'none';
+        }
+
+        // Ensure visibleItems matches current screen size
+        updateVisibleItems();
+        // Update view more button based on current state
+        if (currentCategory === 'all') {
+            if (allItems.length > visibleItems) {
+                viewMoreBtn.style.display = 'block';
+                viewMoreBtn.textContent = 'View More';
+            } else if (allItems.length > 0) {
+                viewMoreBtn.style.display = 'block';
+                viewMoreBtn.textContent = 'Show Less';
+            } else {
+                viewMoreBtn.style.display = 'none';
+            }
+        } else {
+            viewMoreBtn.style.display = 'none';
+        }
+
+        if (itemsToShow.length === 0) {
             menuGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: #666;">No items found in this category.</p>';
             return;
         }
 
-        filteredItems.forEach(item => {
+        itemsToShow.forEach(item => {
             const card = document.createElement('div');
             card.className = 'menu-card';
 
@@ -352,12 +404,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Event listener for view more button
+    viewMoreBtn.addEventListener('click', () => {
+        if (currentCategory === 'all') {
+            // For "All Menu", implement pagination
+            if (visibleItems < allItems.length) {
+                // Show more items
+                visibleItems += detectScreenSize();
+                renderMenu();
+            } else {
+                // Show less items (reset to initial)
+                visibleItems = detectScreenSize();
+                viewMoreBtn.textContent = 'View More';
+                renderMenu();
+            }
+        }
+    });
+
     // Filter event listeners
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentCategory = btn.getAttribute('data-category');
+            // Reset visible items when changing category
+            visibleItems = detectScreenSize();
             renderMenu();
         });
     });
