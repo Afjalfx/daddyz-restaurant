@@ -171,31 +171,100 @@
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2>Contact Us</h2>
+                <p class="contact-subtitle">Have a question, want to book a table or planning a special event? We'd love to hear from you!</p>
+
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Daddy'z Restaurant<br>Near Lalit Narayan Mithila University<br>Darbhanga, Bihar 846004, India</p>
-                        <div class="map-container">
-                            <iframe title="Restaurant Location Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.323835490775!2d85.902564!3d26.1607275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb9a0757cada7%3A0x7ac2ccc1b41c2fd7!2sDaddy%27z%20Restaurant!5e0!3m2!1sen!2sin!4v1234567890123" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                        <a href="https://www.google.com/maps/place/Daddy'z/@26.1607275,85.902564,17z/data=!3m1!4b1!4m6!3m5!1s0x39edb9a0757cada7:0x7ac2ccc1b41c2fd7!8m2!3d26.1607227!4d85.9051389!16s%2Fg%2F11ls214yk_?entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="view-map-link">
-                            <i class="fas fa-external-link-alt"></i> View Full Map</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <p>+91 9876543210</p>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <p>daddyzrestaurant@email.com</p>
-                    </div>
-                    <div class="contact-form">
-                        <form>
-                            <input type="text" placeholder="Your Name" required>
-                            <input type="email" placeholder="Your Email" required>
-                            <textarea placeholder="Your Message" required></textarea>
-                            <button type="submit" class="btn">Send Message</button>
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <h3><i class="fas fa-envelope-open-text"></i> Send us a Message</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-comment-dots"></i>
+                                <textarea placeholder="Your Message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-orange">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
                         </form>
+                    </div>
+
+                    <!-- Contact Info & Map -->
+                    <div class="contact-info-wrapper">
+                        <h3><i class="fas fa-address-book"></i> Contact Information</h3>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info-details">
+                                <span class="info-label">Phone Numbers</span>
+                                <a href="tel:+917870800003" class="info-link">+91 78708 00003</a>
+                                <a href="tel:+917870811113" class="info-link">+91 78708 11113</a>
+                                <a href="tel:+918789137631" class="info-link">+91 87891 37631</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-details">
+                                <span class="info-label">Email Address</span>
+                                <a href="mailto:sonikajahaddadyz@gmail.com" class="info-link">sonikajahaddadyz@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="info-details">
+                                <span class="info-label">Opening Hours</span>
+                                <table class="hours-table">
+                                    <tr><td>Monday</td><td>11 AM - 11 PM</td></tr>
+                                    <tr><td>Tuesday</td><td>11 AM - 11:30 PM</td></tr>
+                                    <tr><td>Wednesday</td><td>11 AM - 11 PM</td></tr>
+                                    <tr><td>Thursday</td><td>11 AM - 11 PM</td></tr>
+                                    <tr><td>Friday</td><td>11 AM - 11 PM</td></tr>
+                                    <tr><td>Saturday</td><td>11 AM - 11:30 PM</td></tr>
+                                    <tr><td>Sunday</td><td>11 AM - 11:30 PM</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="map-wrapper">
+                            <h4><i class="fas fa-map-marker-alt"></i> Find Us on Map</h4>
+                            <p>Visit our restaurant or get directions with a single tap.</p>
+                            <div class="map-container">
+                                <iframe title="Restaurant Location Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.323835490775!2d85.902564!3d26.1607275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb9a0757cada7%3A0x7ac2ccc1b41c2fd7!2sDaddy%27z%20Restaurant!5e0!3m2!1sen!2sin!4v1234567890123" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <a href="https://www.google.com/maps/place/Daddy'z/@26.1607275,85.902564,17z/data=!3m1!4b1!4m6!3m5!1s0x39edb9a0757cada7:0x7ac2ccc1b41c2fd7!8m2!3d26.1607227!4d85.9051389!16s%2Fg%2F11ls214yk_?entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-orange btn-directions">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="social-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/DaddyzRestaurant" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Daddy'z Restaurant Facebook</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://www.instagram.com/daddyzdarbhanga" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>@daddyzdarbhanga</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
