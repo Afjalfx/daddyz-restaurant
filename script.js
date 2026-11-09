@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const menuData = [
         // RICE & PULAO -> rice-biryani
-        { id: 1, name: 'Plain Rice', category: 'rice-biryani', price: 80, isVeg: true, image: null },
+        { id: 1, name: 'Plain Rice', category: 'rice-biryani', price: 80, isVeg: true, image: 'https://bitesofindiaevan.com/wp-content/uploads/2024/11/Plain-Rice.png' },
         { id: 2, name: 'Jeera Rice', category: 'rice-biryani', price: 100, isVeg: true, image: null },
         { id: 3, name: 'Veg Fried Rice', category: 'rice-biryani', price: 160, isVeg: true, image: null },
         { id: 4, name: 'Paneer Fried Rice', category: 'rice-biryani', price: 175, isVeg: true, image: null },
@@ -133,15 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 26, name: 'Mutton Biryani', category: 'rice-biryani', price: 250, isVeg: false, image: null },
 
         // DAL & MAIN COURSE VEG -> main-course
-        { id: 27, name: 'Dal Fry', category: 'main-course', price: 130, isVeg: true, image: null },
-        { id: 28, name: 'Dal Tarka', category: 'main-course', price: 150, isVeg: true, image: null },
-        { id: 29, name: 'Dal Makhni', category: 'main-course', price: 190, isVeg: true, image: null },
-        { id: 30, name: 'Dal Jeera', category: 'main-course', price: 100, isVeg: true, image: null },
-        { id: 31, name: 'Dal Mughlai', category: 'main-course', price: 220, isVeg: true, image: null },
-        { id: 32, name: "Daddy'z Special Paneer", category: 'main-course', price: 450, isVeg: true, image: null },
-        { id: 33, name: 'Paneer Panjabi', category: 'main-course', price: 320, isVeg: true, image: null },
-        { id: 34, name: 'Paneer Kolhapuri', category: 'main-course', price: 270, isVeg: true, image: null },
-        { id: 35, name: 'Paneer Makhni', category: 'main-course', price: 250, isVeg: true, image: null },
+        { id: 27, name: 'Dal Fry', category: 'main-course', price: 130, isVeg: true, image: 'menu images/Dal Fry.png' },
+        { id: 28, name: 'Dal Tarka', category: 'main-course', price: 150, isVeg: true, image: 'menu images/Dal Tarka.png' },
+        { id: 29, name: 'Dal Makhni', category: 'main-course', price: 190, isVeg: true, image: 'menu images/Dal Makhni.png' },
+        { id: 30, name: 'Dal Jeera', category: 'main-course', price: 100, isVeg: true, image: 'menu images/Dal Jeera.png' },
+        { id: 31, name: 'Dal Mughlai', category: 'main-course', price: 220, isVeg: true, image: 'menu images/Dal Mughlai.png' },
+        { id: 32, name: "Daddy'z Special Paneer", category: 'main-course', price: 450, isVeg: true, image: 'menu images/Daddy’z Special Paneer.png' },
+        { id: 33, name: 'Paneer Panjabi', category: 'main-course', price: 320, isVeg: true, image: 'menu images/Paneer Panjabi.png' },
+        { id: 34, name: 'Paneer Kolhapuri', category: 'main-course', price: 270, isVeg: true, image: 'menu images/Paneer Kolhapuri.png' },
+        { id: 35, name: 'Paneer Makhni', category: 'main-course', price: 250, isVeg: true, image: 'menu images/Paneer Makhni.png' },
         { id: 36, name: 'Paneer Butter Masala', category: 'main-course', price: 280, isVeg: true, image: null },
         { id: 37, name: 'Mix Veg', category: 'main-course', price: 190, isVeg: true, image: null },
         { id: 38, name: 'Mithila Special Thali', category: 'main-course', price: 250, isVeg: true, image: null, description: 'Signature dish with dal, rice, roti, and curries.' },
