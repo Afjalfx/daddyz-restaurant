@@ -996,10 +996,59 @@ nav ul li a:hover {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 50px;
     align-items: start;
     margin-bottom: 60px;
+}
+
+/* LEFT Column: Form + Map */
+.contact-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* RIGHT Column: Contact Info Only */
+.contact-info-wrapper-right {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(211, 84, 0, 0.1);
+    height: fit-content;
+}
+
+.contact-info-wrapper-right h3 {
+    font-size: 22px;
+    color: #d35400;
+    margin-bottom: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Inline Map Wrapper (below form) */
+.map-wrapper-inline {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(211, 84, 0, 0.1);
+}
+
+.map-wrapper-inline h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.map-wrapper-inline p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 /* Contact Form */
@@ -1690,13 +1739,19 @@ footer {
         margin-bottom: 40px;
     }
 
+    .contact-left-col,
+    .contact-info-wrapper-right {
+        width: 100%;
+    }
+
     .contact-form-wrapper,
-    .contact-info-wrapper {
+    .contact-info-wrapper-right,
+    .map-wrapper-inline {
         padding: 25px;
     }
 
     .contact-form-wrapper h3,
-    .contact-info-wrapper h3 {
+    .contact-info-wrapper-right h3 {
         font-size: 18px;
         margin-bottom: 20px;
     }
